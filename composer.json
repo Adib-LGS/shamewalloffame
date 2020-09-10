@@ -45,7 +45,8 @@
         "symfony/debug-bundle": "^5.1",
         "symfony/maker-bundle": "^1.0",
         "symfony/phpunit-bridge": "^5.1",
-        "symfony/var-dumper": "^5.1"
+        "symfony/var-dumper": "^5.1",
+        "theofidry/psysh-bundle": "^4.3"
     },
     "config": {
         "optimize-autoloader": true,
