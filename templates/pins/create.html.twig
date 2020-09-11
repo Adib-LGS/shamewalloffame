@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title 'New Pin' %}
+
+{% block body %}
+    <h1>Create Pin</h1>
+
+        {{ form_start(formView) }}
+            {{ form_widget(formView) }}
+
+            <input type="submit" value="Create Pin">
+
+        {{ form_end(formView) }}
+{% endblock %}

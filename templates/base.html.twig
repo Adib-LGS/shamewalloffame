@@ -6,7 +6,13 @@
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
+        {% block body %}
+        <nav>
+            <li><a href="{{ path('home') }}"></a></li>
+            <li><a href="{{ path('pins.create') }}"></a></li>
+        </nav>
+        {% endblock %}
+        
         {% block javascripts %}{% endblock %}
     </body>
 </html>
