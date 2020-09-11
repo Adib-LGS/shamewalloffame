@@ -15,5 +15,10 @@
     </article>
 
     <a href="{{ path('pins.edit', {id: pin.id}) }}">Edit</a> |
+    <a href="#" onclick="event.preventDefault(); confirm('Do you want to delete ?') && document.getElementById('js-deleteForm').submit();">Delete</a>
     <a href="{{ path('home') }}">Go Back</a>
+
+    <form id="js-deleteForm" action="{{ path('pins.delete', {id: pin.id}) }}" method="post" style="display:none;">
+        <input type="hidden" name="_method" value="Delete">
+    </form>
 {% endblock %}
