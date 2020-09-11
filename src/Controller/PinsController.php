@@ -62,13 +62,13 @@ class PinsController extends AbstractController
     }
 
     /**
-     * @Route("/pins/{id<[0-9]+>}/edit", name="pins.edit", methods="GET|POST")
+     * @Route("/pins/{id<[0-9]+>}/edit", name="pins.edit", methods="GET|PUT")
      */
     public function edit(Pin $pin, Request $request, EntityManagerInterface $em): Response
     {   
         //dd($pin);
 
-        $formView = $this->createFormBuilder($pin)
+        $formView = $this->createFormBuilder($pin, ['method' => 'PUT'])
             ->add('Title', TextType::class)
             ->add('Description', TextareaType::class)
             ->getForm();
@@ -76,6 +76,8 @@ class PinsController extends AbstractController
 
         if($formView->isSubmitted() && $formView->isValid()){
             $em->flush();
+            
+            return $this->redirectToRoute('home');
         }
         return $this->render('pins/edit.html.twig', [
             'pin' => $pin,

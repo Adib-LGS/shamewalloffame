@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html>
     <head>
+    {% block head %}
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
+    {% endblock %}
     </head>
     <body>
         {% block body %}
         <nav>
-            <li><a href="{{ path('home') }}"></a></li>
-            <li><a href="{{ path('pins.create') }}"></a></li>
+            <ul>
+                <li><a href="{{ path('home') }}">Home</a></li>
+                <li><a href="{{ path('pins.create') }}">Create Pin</a></li>
+            </ul>
         </nav>
         {% endblock %}
-        
         {% block javascripts %}{% endblock %}
     </body>
 </html>

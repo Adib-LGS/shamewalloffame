@@ -3,6 +3,12 @@
 {% block title 'Edit Pin ' ~ pin.id %}
 
 {% block body %}
+    <nav>
+        <ul>
+            <li><a href="{{ path('home') }}">Home</a></li>
+            <li><a href="{{ path('pins.create') }}">Create Pin</a></li>
+        </ul>
+    </nav>
     <h1>Edit Pin {{ pin.id }}</h1>
 
         {{ form_start(formView) }}
