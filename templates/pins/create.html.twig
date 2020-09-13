@@ -10,11 +10,5 @@
         </ul>
     </nav>
     <h1>Create Pin</h1>
-
-        {{ form_start(formView) }}
-            {{ form_widget(formView) }}
-
-            <input type="submit" value="Create Pin">
-
-        {{ form_end(formView) }}
+        {{ include('pins/partial-form.html.twig', {submitButtonText: 'Create Pin'}) }}
 {% endblock %}
