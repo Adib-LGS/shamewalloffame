@@ -9,6 +9,10 @@
             <li><a href="{{ path('pins.create') }}">Create Pin</a></li>
         </ul>
     </nav>
-    <h1>Edit Pin {{ pin.id }}</h1>
-     {{ include('pins/partial-form.html.twig', {submitButtonText: 'Update Pin'}) }}
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <h1>Edit Pin {{ pin.id }}</h1>
+            {{ include('pins/partial-form.html.twig', {submitButtonText: 'Update Pin'}) }}
+        </div>
+    </div>
 {% endblock %}
