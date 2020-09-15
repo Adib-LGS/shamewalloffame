@@ -1,15 +1,9 @@
-{% extends 'base.html.twig' %}
+{% extends 'layouts/base.html.twig' %}
 
 {% block title pin.title %}
 
 {% block body %}
     <article>
-        <nav>
-            <ul>
-                <li><a href="{{ path('home') }}">Home</a></li>
-                <li><a href="{{ path('pins.create') }}">Create Pin</a></li>
-            </ul>
-        </nav>
         <h1>{{ pin.title }}</h1>
         <p>{{ pin.description }}</p>
     </article>

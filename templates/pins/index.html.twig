@@ -1,14 +1,8 @@
-{% extends "base.html.twig" %}
+{% extends "layouts/base.html.twig" %}
 
 {% block title 'ShameWallOfFame!' %}
 
 {% block body %}
-    <nav>
-        <ul>
-            <li><a href="{{ path('home') }}">Home</a></li>
-            <li><a href="{{ path('pins.create') }}">Create Pin</a></li>
-        </ul>
-    </nav>
     <h1>{{ pluralize(pins|length, 'Pin') }}</h1>
 
     {% for pin in pins %}

@@ -46,6 +46,8 @@ class PinsController extends AbstractController
             $em->persist($pin);
             $em->flush();
 
+            $this->addFlash('success', 'Pin successfully created !');
+
             return $this->redirectToRoute('home');
 
         }
@@ -77,6 +79,8 @@ class PinsController extends AbstractController
         if($formView->isSubmitted() && $formView->isValid()){
             $em->flush();
 
+            $this->addFlash('success', 'Pin successfully updated !');
+
             return $this->redirectToRoute('home');
         }
         return $this->render('pins/edit.html.twig', [
@@ -94,6 +98,8 @@ class PinsController extends AbstractController
         if($this->isCsrfTokenValid('pin-delete' . $pin->getId(), $request->request->get('csrfTkn'))){
             $em->remove($pin);
             $em->flush();
+
+            $this->addFlash('info', 'Pin successfully deleted !');
         }
 
         return $this->redirectToRoute('home');
