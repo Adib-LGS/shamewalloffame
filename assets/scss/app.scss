@@ -1,0 +1,26 @@
+@import "~bootstrap";
+
+body {
+    background-color: rgb(245, 245, 245);
+}
+
+.alert{
+    padding: 10px;
+    color: white;
+    text-align: center;
+    margin: 0;
+    border: none;
+    border-radius: 0;
+
+    &.alert-success{
+        background-color: green;
+    }
+    
+    &.alert-error{
+        background-color: red;
+    }
+    
+    &.alert-info{
+        background-color: blue;
+    }
+}
