@@ -13,3 +13,8 @@ import $ from 'jquery';
 import 'bootstrap';
 
 console.log('Hello Webpack Encore! Edit me in assets/js/app.js');
+
+$('.custom-file-input').on('change', function(e) {
+    var inputFile = e.currentTarget;
+    $(inputFile).parent().find('.custom-file-label').html(inputFile.files[0].name);
+});
