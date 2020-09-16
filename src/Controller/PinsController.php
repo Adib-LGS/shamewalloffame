@@ -11,6 +11,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Vich\UploaderBundle\Form\Type\VichImageType;
 
 class PinsController extends AbstractController
 {
@@ -34,6 +35,13 @@ class PinsController extends AbstractController
         $pin = new Pin;
 
         $formView = $this->createFormBuilder($pin)
+        ->add('imageFile', VichImageType::class, [
+            'label' => 'Image (JPG or PNG file)',
+            'required' => false,
+            'allow_delete' => true,
+            'delete_label' => '...',
+            'download_uri' => false,
+        ])
             ->add('Title', TextType::class)
             ->add('Description', TextareaType::class)
             ->getForm();
@@ -71,6 +79,13 @@ class PinsController extends AbstractController
         //dd($pin);
 
         $formView = $this->createFormBuilder($pin, ['method' => 'PUT'])
+        ->add('imageFile', VichImageType::class, [
+            'label' => 'Image (JPG or PNG file)',
+            'required' => false,
+            'allow_delete' => true,
+            'delete_label' => '...',
+            'download_uri' => false,
+        ])
             ->add('Title', TextType::class)
             ->add('Description', TextareaType::class)
             ->getForm();
