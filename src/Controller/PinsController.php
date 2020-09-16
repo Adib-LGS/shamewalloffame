@@ -39,7 +39,7 @@ class PinsController extends AbstractController
             'label' => 'Image (JPG or PNG file)',
             'required' => false,
             'allow_delete' => true,
-            'delete_label' => '...',
+            'delete_label' => 'Delete',
             'download_uri' => false,
         ])
             ->add('Title', TextType::class)
@@ -83,8 +83,9 @@ class PinsController extends AbstractController
             'label' => 'Image (JPG or PNG file)',
             'required' => false,
             'allow_delete' => true,
-            'delete_label' => '...',
+            'delete_label' => 'Delete',
             'download_uri' => false,
+            'imagine_pattern' => 'squared_thumbnail_small'
         ])
             ->add('Title', TextType::class)
             ->add('Description', TextareaType::class)
