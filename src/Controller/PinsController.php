@@ -50,6 +50,7 @@ class PinsController extends AbstractController
 
         if($formView->isSubmitted() && $formView->isValid()){
             //dd('create pin');
+            $pin->setUser($this->getUser());
             $pin = $formView->getData();
             $em->persist($pin);
             $em->flush();
