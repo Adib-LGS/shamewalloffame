@@ -101,9 +101,10 @@ class LoginFormAuthenticator extends AbstractFormLoginAuthenticator implements P
     }
 
     public function onAuthenticationSuccess(Request $request, TokenInterface $token, string $providerKey)
-    {   
-        //$request allow us to acceed to session
-        //$request->getSession()->getFlashBag()->add('succes', 'Logged in succesfully!');
+    {   //$request allow us to acceed to session
+
+        //dd($token->getUser());
+        $request->getSession()->getFlashBag()->add('success', 'Welcome ' . $token->getUser()->getFullName());
         //dd($providerKey) === packages/security.yaml fireWall Name;
         if ($targetPath = $this->getTargetPath($request->getSession(), $providerKey)) {
             return new RedirectResponse($targetPath);
